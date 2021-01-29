@@ -11,7 +11,7 @@ pipeline{
 			label 'docker'
 		}
 		steps{
-			sh 'ip addr show'|
+			sh 'ip addr show'
 		}
 	}
 		
