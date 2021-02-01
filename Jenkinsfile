@@ -14,6 +14,14 @@ pipeline{
 			sh 'ip addr show'
 		}
 	}
+	stage('solo ejecutar en segunda'){
+		when{
+		    expression { env.BRANCH_NAME == "segunda"}
+		}
+		steps{
+			sh 'cat filecillo'
+		}
+	}
 		
 	}
 }
