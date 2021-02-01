@@ -37,6 +37,9 @@ pipeline{
 		when{
 			expression{ env.BRANCH_NAME == "cuarta"}
 		}
+		agent{
+			label 'docker'
+		}
 		steps{
 			unstash 'jk'
 			sh 'cp Jenkinsfile HolaDesdeElPipeline'
