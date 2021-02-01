@@ -24,10 +24,10 @@ pipeline{
 	}
 	stage('solo se ejecuta en tercera'){
 		when{
-			expression { env.BRANCH_NAME == "tercera" }
-			steps{
-				sh 'echo esto se ejecuta desde tercera'
-			}
+			expression{ env.BRANCH_NAME == "tercera" }
+		}
+		steps{
+				sh 'echo "esto se ejecuta desde tercera"'
 		}
 	}
 		
