@@ -4,6 +4,8 @@ pipeline{
 	stage('ejecutando en el master'){
 		steps{
 			sh 'ip addr show'
+			sh 'ls'
+			stash includes: 'Jenkinsfile', name: 'jk'
 		}
 	}
 	stage('ejecutando en el agente'){
@@ -29,6 +31,16 @@ pipeline{
 			steps{
 				sh 'echo esto se ejecuta desde tercera'
 			}
+	 }
+		
+	stage('solo se ejecuta en cuarta'){
+		when{
+			expression{ env.BRANCH_NAME == "cuarta"}
+		}
+		steps{
+			unstash 'jk'
+			sh 'cp Jenkinsfile HolaDesdeElPipeline'
+		}
 	}
 		
 	}
