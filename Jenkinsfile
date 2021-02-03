@@ -22,7 +22,7 @@ pipeline{
 		stage('delivery'){
 			steps{
 				unstash 'output'
-				archiveArtifacts artifacts: 'output.txt', followSymlinks: false
+				archiveArtifacts artifacts: 'myapp/target/output.txt', followSymlinks: false
 			}
 		}
 	}
