@@ -16,7 +16,7 @@ pipeline{
 				unstash 'app'
 				sh 'cd myapp && mvn clean package'
 				sh 'cd myapp/target && java -jar myapp.jar > output.txt'
-				stash includes: 'myapp/target/myapp/output.txt', name: 'output', allowEmpty: false
+				stash includes: 'myapp/target/output.txt', name: 'output', allowEmpty: false
 			}
 		}
 		stage('delivery'){
