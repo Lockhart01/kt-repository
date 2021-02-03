@@ -21,7 +21,7 @@
     </dependency>
   </dependencies>
   <properties>
-    <jar.finalName>${project.name}-${NAME}</jar.finalName>
+    <jar.finalName>${project.name}</jar.finalName>
   </properties>
 
   <build>
