@@ -24,6 +24,7 @@ pipeline{
 			steps{
 				unstash 'output'
 				archiveArtifacts artifacts: 'myapp/target/output.txt', followSymlinks: false
+				sh 'echo ${SALUDO}'
 			}
 		}
 	}
